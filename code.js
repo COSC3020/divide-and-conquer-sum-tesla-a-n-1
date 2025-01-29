@@ -4,8 +4,7 @@ function divideAndConquerSum(a) {
     } else if (a.length === 1) {
         return a[0]; // Return the single element
     } else if (a.length === 2) {
-        // Sum two elements directly because we're thirding the lists
-        return a[0] + a[1];
+        return a[0] + a[1]; // Sum two elements directly because we're thirding the lists
     }
 
     const split = Math.floor(a.length / 3);
@@ -13,10 +12,11 @@ function divideAndConquerSum(a) {
     const mid = divideAndConquerSum(a.slice(split, split * 2)); //middle third
     const right = divideAndConquerSum(a.slice(split * 2));  //last third
 
-    // Sum the results of left, mid, and right
-    return left + mid + right;
+    return left + mid + right; // Sum the results of left, mid, and right
 }
+
 /*
 const array = [38, 27, 43, 3, 9, 82, 10, 0];
 const summ = divideAndConquerSum(array);
-console.log("Sum:", summ); */
+console.log("Sum:", summ); 
+*/
