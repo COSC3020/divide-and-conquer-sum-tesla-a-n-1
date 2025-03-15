@@ -48,28 +48,27 @@ Divide splits the array into 3 sub-arrays which would each be about n/3 (constan
 
 Conquer recursively sorts the three sub-arrays so 3*T(n/3)
 
-Combine takes O(n) time because we are merging n elements
+Merging the split subarrays takes n time because we are merging all the elements in the array. n
 
-T(n) = 3T(n/3) + O(n) = 3T(n/3) + n
+
+
+T(n) = 1 if n <= 1 or T(n) = 3T(n/3) + n if n > 1
 
      = 3 [ 3T(n/9) + n/3 ] + n
      
-     = 9T(n/9) + 3(n/3) +n
-     
      = 9T(n/9) + 2n
-     
-After expanding again, it comes to T(n) = 3^(k)T(n/3^(k)) + kn
-base case happens when n/3^(k) = 1 which then gives n = 3^(k) so solving for k, we get:
 
-  k=log(base 3)n , T(1) = O(1)
-  
-Substituting k into the recurrence;
+     ...
 
-  T(n) = 3^(log(base 3))T(1) + (log(base 3)n) * n
-  
-       = n * O(1) + n * log(base 3)n
-       
-       = O(nlog(base 3)n)
+     = 27T(n/27) + 3n
+
+     = 3^(3)T(n/3^(3)) + 3n
+
+     = 3^(i)T(n/3^(i)) + in
+
+     for i = lg n
+
+     = nT(1) + nlgn = n + nlgn $\in$ $\Theta$ (nlogn)
        
 Overall, the time complexity is: $\Theta$ (nlogn) just like regular merge sort
 because even though the array is split into three subarrays instead of two, the difference
