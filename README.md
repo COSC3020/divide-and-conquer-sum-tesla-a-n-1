@@ -69,7 +69,7 @@ T(n) = 1 if n <= 1 or T(n) = 3T(n/3) + n if n > 1
      for i = lg n
 
      = nT(1) + nlgn = n + nlgn $\in$ $\Theta$ (nlogn)
-       
+       Requested changes have been made.
 Overall, the time complexity is: $\Theta$ (nlogn) just like regular merge sort
 because even though the array is split into three subarrays instead of two, the difference
 in log base doesn't affect the complexity significantly so both of them have the same asymptotic 
